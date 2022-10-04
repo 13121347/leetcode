@@ -1,7 +1,12 @@
 package SumTwoNumber
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestSumTwoNum1(t *testing.T) {
-	SumTwoNum1()
+	nums := []int{1, 2, 3, 7}
+	target := 8
+	fmt.Println(twoSum(nums, target))
 }
