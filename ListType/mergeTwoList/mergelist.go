@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-//暴力
+//暴力，这里重新创建了一个新的list，把l1，l2的值复制过来，内存使用增加了
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	// 处理特殊情况：list出现nil
 	if list1 == nil && list2 == nil {
@@ -30,6 +30,7 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 			movedPtr = head
 		} else {
 			movedPtr.Next = &ListNode{currentVal, &ListNode{}}
+			//最开始复习链表，总是不记得要把moved指针往后移动
 			movedPtr = movedPtr.Next
 		}
 	}
@@ -65,7 +66,7 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	return head
 }
 
-// 暴力优化
+// 暴力优化，优化了重复定义的内容
 func mergeTwoLists2(list1 *ListNode, list2 *ListNode) *ListNode {
 	// 处理特殊情况：list出现nil
 	if list1 == nil && list2 == nil {
@@ -117,7 +118,7 @@ func mergeTwoLists2(list1 *ListNode, list2 *ListNode) *ListNode {
 	return head
 }
 
-// 哑节点暴力
+// 哑节点暴力，对于这种在原链表上操作的，一般都是定义一个哑节点
 func mergeTwoListsDummy(l1 *ListNode, l2 *ListNode) *ListNode {
 	dummyListNode := &ListNode{}
 	movedP := dummyListNode
@@ -157,9 +158,28 @@ func mergeTwoListsDummy(l1 *ListNode, l2 *ListNode) *ListNode {
 	return dummyListNode.Next
 }
 
+//针对上面，如果不用哑节点，这样做就比较麻烦了，因为不确定第一个节点应该指向l1/l2,所以要比较多的特殊处理
+func mergeTwoListsDummy2(l1 *ListNode, l2 *ListNode) *ListNode {
+	movedL1 := l1
+	movedL2 := l2
+
+	var movedHead *ListNode
+	//定头节点在哪里
+	if movedL1.Val <= movedL2.Val {
+		movedHead = movedL1
+		//遍历L1剩下部分，和L2
+
+	} else {
+		movedHead = movedL2
+		//遍历L2剩下部分，和L1
+	}
+
+	return movedHead
+
+}
+
 // 递归
 func mergeTwoLists3(list1 *ListNode, list2 *ListNode) *ListNode {
-
 	if list1 == nil {
 		return list2
 	} else if list2 == nil {

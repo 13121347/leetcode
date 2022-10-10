@@ -1,6 +1,7 @@
 package ReverseList
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 )
@@ -47,5 +48,10 @@ func Test_reverseList2(t *testing.T) {
 	}
 	l1 := &d
 
-	reverseList2(l1)
+	result := reverseList1(l1)
+
+	for result != nil {
+		fmt.Println(result.Val)
+		result = result.Next
+	}
 }

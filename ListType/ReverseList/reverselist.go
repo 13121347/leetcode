@@ -18,15 +18,14 @@ func reverseList1(head *ListNode) *ListNode {
 
 func reverseList2(head *ListNode) *ListNode {
 	prev := &ListNode{}
-	curr := head
+	moved := head
 
-	for curr != nil {
-		tempNode := curr.Next
-
-		curr.Next = prev
-		prev = curr
-		curr = tempNode
+	for moved != nil {
+		nextNode := moved.Next
+		moved.Next = prev
+		prev = moved
+		moved = nextNode
 	}
 
-	return prev
+	return moved //这里return的是moved，不是prev
 }

@@ -12,6 +12,7 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	}
 
 	countA, countB := 0, 0
+	//这里最开始没有定义countAPtr,countBPtr,直接用head向下遍历，导致遍历完count，head指针已经是nil了
 	countAPtr, countBPtr := headA, headB
 
 	for countAPtr != nil {
@@ -38,7 +39,8 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	}
 
 	for movedA != nil && movedB != nil {
-		if movedA == movedB { //出错在这里用movedA.next和movedB.next来判断
+		//出错在这里用movedA.next和movedB.next来判断。要明确指针指在哪里了
+		if movedA == movedB {
 			return movedA
 		}
 		movedA = movedA.Next

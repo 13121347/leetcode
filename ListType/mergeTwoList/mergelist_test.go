@@ -66,7 +66,7 @@ func Test_mergeTwoLists(t *testing.T) {
 			result = result.Next
 		}*/
 
-	result := mergeTwoListsDummy(l1, l2)
+	result := mergeTwoLists3(l1, l2)
 	for result != nil {
 		fmt.Println(result.Val)
 		result = result.Next
