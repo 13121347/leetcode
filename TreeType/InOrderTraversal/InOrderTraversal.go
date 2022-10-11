@@ -6,6 +6,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+//中序：左根右
 func inOrderTraversal(root *TreeNode) []int {
 	result := make([]int, 0)
 
