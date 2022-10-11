@@ -24,7 +24,7 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
 	if n == headCount {
 		return head.Next
-	} //少了这一种情况
+	} //少了这一种情况，如果用了哑节点，就不需要额外处理这个逻辑
 
 	movedPtr := head
 	prePtr := &ListNode{0, head}

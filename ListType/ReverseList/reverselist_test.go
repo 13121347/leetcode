@@ -48,7 +48,7 @@ func Test_reverseList2(t *testing.T) {
 	}
 	l1 := &d
 
-	result := reverseList1(l1)
+	result := reverseListStack(l1)
 
 	for result != nil {
 		fmt.Println(result.Val)
