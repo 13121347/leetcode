@@ -6,7 +6,7 @@ func lengthOfLongestSubstring(s string) int {
 	//记录两个下标，对下标中间的字符使用map判断是否存在，以及存在位置
 	//当移动后面的下标后会引入重复字符，进行缩短
 
-	m := map[byte]int{}
+	cMap := map[byte]int{}
 	n := len(s)
 
 	right, ans := -1, 0
@@ -14,12 +14,12 @@ func lengthOfLongestSubstring(s string) int {
 	for i := 0; i < n; i++ {
 		//删除map里之前存在的，遍历过的字符
 		if i != 0 {
-			delete(m, s[i-1])
+			delete(cMap, s[i-1])
 		}
 		//左指针没有指向最后一个字符 && map里面没有出现过这个字符，s[right+1] = 当前的字符串，是map的key
-		for right+1 < n && m[s[right+1]] == 0 {
+		for right+1 < n && cMap[s[right+1]] == 0 {
 			//在map里记录这个字符
-			m[s[right+1]]++
+			cMap[s[right+1]]++
 			right++
 		}
 		//到头了或者出现重复的字符了，看看当前[指针位置，遍历起点]长度
