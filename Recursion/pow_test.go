@@ -1,4 +1,4 @@
-package Reverse
+package Recursion
 
 import (
 	"fmt"

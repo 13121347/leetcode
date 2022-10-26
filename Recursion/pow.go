@@ -1,4 +1,4 @@
-package Reverse
+package Recursion
 
 func pow(x, n int) int {
 	if n == 0 {
