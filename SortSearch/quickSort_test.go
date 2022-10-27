@@ -1,4 +1,4 @@
-package Sort
+package SortSearch
 
 import (
 	"fmt"
@@ -17,5 +17,29 @@ func TestQuickSortDown(t *testing.T) {
 	for _, k := range testArr {
 		fmt.Print(k, " ")
 	}
+}
 
+func TestSortUsage(t *testing.T) {
+	m1 := MySort{
+		Id: 1,
+		s:  1,
+	}
+
+	m2 := MySort{
+		Id: 3,
+		s:  1,
+	}
+
+	m3 := MySort{
+		Id: 5,
+		s:  1,
+	}
+
+	msarr := []MySort{m1, m2, m3}
+
+	sortUsage(msarr)
+
+	for _, v := range msarr {
+		fmt.Print(v, "  ")
+	}
 }
