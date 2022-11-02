@@ -1,4 +1,4 @@
-package SortSearch
+package BiSearch
 
 func biSearch(nums []int, target int) int {
 	leftIdx, rightIdx := 0, len(nums)-1

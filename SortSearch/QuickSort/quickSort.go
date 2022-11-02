@@ -1,4 +1,4 @@
-package SortSearch
+package QuickSort
 
 /**
 https://blog.csdn.net/Hell_potato777/article/details/113698205
@@ -48,3 +48,5 @@ func partionDown(a []int, leftIndex, rightIndex int) int {
 	a[leftIndex], a[idx-1] = a[idx-1], a[leftIndex]
 	return idx - 1
 }
+
+//或者使用内置排序

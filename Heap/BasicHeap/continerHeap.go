@@ -1,4 +1,4 @@
-package KthNumber
+package BasicHeap
 
 type IntHeap []int
 

@@ -1,4 +1,4 @@
-package SortSearch
+package QuickSort
 
 import (
 	"fmt"
@@ -36,8 +36,6 @@ func TestSortUsage(t *testing.T) {
 	}
 
 	msarr := []MySort{m1, m2, m3}
-
-	sortUsage(msarr)
 
 	for _, v := range msarr {
 		fmt.Print(v, "  ")
