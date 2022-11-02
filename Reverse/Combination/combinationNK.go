@@ -1,5 +1,6 @@
 package Combination
 
+// https://leetcode.cn/problems/combinations/
 import "fmt"
 
 func combinationNK(n, k int) (ans [][]int) {
