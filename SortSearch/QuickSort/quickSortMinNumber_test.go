@@ -7,7 +7,7 @@ import (
 )
 
 func Test_minNumber(t *testing.T) {
-	str1 := "5"
-	str2 := "4"
-	fmt.Println(strings.Compare(str1, str2))
+	testString := []string{"1", "3", "5", "6"}
+	fmt.Println(strings.Join(testString, ""))
+
 }

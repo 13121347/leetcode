@@ -1,5 +1,7 @@
 package RotateRight
 
+// 旋转链表 https://leetcode.cn/problems/rotate-list/
+
 type ListNode struct {
 	Val  int
 	Next *ListNode

@@ -1,6 +1,8 @@
 package LongestSubString
 
-//滑动窗口
+//无重复的最长子串 https://leetcode.cn/problems/longest-substring-without-repeating-characters/
+
+//滑动窗口法
 func lengthOfLongestSubstring(s string) int {
 	//转到数组中
 	//记录两个下标，对下标中间的字符使用map判断是否存在，以及存在位置

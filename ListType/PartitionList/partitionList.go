@@ -1,5 +1,7 @@
 package PartitionList
 
+//分隔链表 https://leetcode-cn.com/problems/partition-list/
+//*双链表问题*
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -41,7 +43,7 @@ func partition(head *ListNode, x int) *ListNode {
 
 }
 
-//维护两个链表
+//维护两个链表，一个存储大节点，一个存储小节点，最后把两个链表合并起来
 func partitionTwoList(head *ListNode, x int) *ListNode {
 	small := &ListNode{}
 	smallHead := small
@@ -49,6 +51,7 @@ func partitionTwoList(head *ListNode, x int) *ListNode {
 	large := &ListNode{}
 	largeHead := large
 
+	//遍历原链表，放入大小两个链表中
 	for head != nil {
 		if head.Val < x {
 			small.Next = head
@@ -60,6 +63,7 @@ func partitionTwoList(head *ListNode, x int) *ListNode {
 		head = head.Next
 	}
 
+	//合并大小两个链表
 	large.Next = nil
 	small.Next = largeHead.Next
 

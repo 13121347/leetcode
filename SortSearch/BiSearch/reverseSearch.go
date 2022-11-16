@@ -2,6 +2,7 @@ package BiSearch
 
 //搜索旋转排序数组 https://leetcode.cn/problems/search-in-rotated-sorted-array/
 //给定一个旋转后的数组，查某个数
+//旋转后部分有序
 func reverseSearch(nums []int, target int) int {
 	leftIdx, rightIdx := 0, len(nums)-1
 
@@ -11,7 +12,7 @@ func reverseSearch(nums []int, target int) int {
 		if target == nums[midIndex] {
 			return midIndex
 		}
-		//target != mid，如果nums[mid] < nums[right]，说明mid到right部分是有序的
+		//target != mid，如果nums[mid] < nums[right]，说明mid到right部分是有序的，后半部分有序
 		if nums[midIndex] < nums[rightIdx] {
 			//根据target大小，判断下一次在哪个部分search
 			if target > nums[midIndex] && target <= nums[rightIdx] {

@@ -5,6 +5,6 @@ import (
 )
 
 func Test_maxSlidingWindow(t *testing.T) {
-	testArr := []int{4, 2, 3, 1, 3, 5}
-	maxSlidingWindow(testArr, 3)
+	testArr := []int{1, 2, 3, 1, 2, 3}
+	containsNearbyDuplicate(testArr, 2)
 }

@@ -8,5 +8,4 @@ package basicBitOperator
 func testBasicBit() {
 	a := 0xCEFF
 	a ^= 0xFF00
-
 }

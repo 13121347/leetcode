@@ -76,11 +76,12 @@ func removeNthFromEndStack(head *ListNode, n int) *ListNode {
 /**
 由于我们需要找到倒数第 n 个节点，因此我们可以使用两个指针first 和 second 同时对链表进行遍历，并且first 比second 超前 n 个节点。
 当first遍历到链表的末尾时， second 就恰好处于倒数第  n 个节点。
+时间复杂度O（n）
 */
 
 func removeNthFromEndTwoPtr(head *ListNode, n int) *ListNode {
-	dummy := &ListNode{0, head}
-	first, second := head, dummy
+	dummy := &ListNode{0, head}  //dummy是必须的
+	first, second := head, dummy //fast,slow指针分别指向head,dummy，可以方便把slow定位到要删除节点的前一个节点
 
 	for i := 0; i < n; i++ {
 		first = first.Next

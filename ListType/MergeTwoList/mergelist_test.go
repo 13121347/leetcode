@@ -1,4 +1,4 @@
-package mergeTwoList
+package MergeTwoList
 
 import (
 	"fmt"

@@ -2,6 +2,7 @@ package MergeSort
 
 //动画讲解 http://wjhsh.net/wangyiyang-p-12205574.html
 //https://blog.csdn.net/weixin_46040684/article/details/121547182
+//时间复杂度非常稳定在任何情况都是O(nlogn)
 func mergeSort(nums []int, start, end int) {
 	if start >= end {
 		return

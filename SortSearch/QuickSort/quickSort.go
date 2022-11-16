@@ -1,9 +1,13 @@
 package QuickSort
 
 /**
+快排，每一次排序固定一个数值的位置
+平摊期望时间是 O(nlogn)
+快速排序不能保证相等元素的相对顺序不发生改变，所以不稳定
 https://blog.csdn.net/Hell_potato777/article/details/113698205
 */
 
+//升序
 func QuickSortUp(nums []int, leftIndex, rightIndex int) {
 	if leftIndex > rightIndex {
 		return
@@ -11,15 +15,6 @@ func QuickSortUp(nums []int, leftIndex, rightIndex int) {
 	keyIdx := partition(nums, leftIndex, rightIndex)
 	QuickSortUp(nums, leftIndex, keyIdx-1)
 	QuickSortUp(nums, keyIdx+1, rightIndex)
-}
-
-func QuickSortDown(nums []int, leftIndex, rightIndex int) {
-	if leftIndex > rightIndex {
-		return
-	}
-	key := partionDown(nums, leftIndex, rightIndex)
-	QuickSortDown(nums, leftIndex, key-1)
-	QuickSortDown(nums, key+1, rightIndex)
 }
 
 //一趟排序，获取分界值的下标
@@ -34,6 +29,16 @@ func partition(a []int, leftIndex, rightIndex int) int {
 	}
 	a[idx-1], a[leftIndex] = a[leftIndex], a[idx-1]
 	return idx - 1
+}
+
+//降序
+func QuickSortDown(nums []int, leftIndex, rightIndex int) {
+	if leftIndex > rightIndex {
+		return
+	}
+	key := partionDown(nums, leftIndex, rightIndex)
+	QuickSortDown(nums, leftIndex, key-1)
+	QuickSortDown(nums, key+1, rightIndex)
 }
 
 func partionDown(a []int, leftIndex, rightIndex int) int {

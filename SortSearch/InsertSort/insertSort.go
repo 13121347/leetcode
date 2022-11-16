@@ -1,7 +1,7 @@
 package InsertSort
 
 // 讲解 https://blog.csdn.net/hcz666/article/details/126488359
-
+// 最坏时间复杂度为：O(n^2)
 //不断后退
 func insertSort(arr []int) {
 	//外循环，从0开始遍历每个值

@@ -1,5 +1,6 @@
 package AddString
 
+//字符串相加 https://leetcode.cn/problems/add-strings/
 import "strconv"
 
 func addStrings(num1 string, num2 string) string {

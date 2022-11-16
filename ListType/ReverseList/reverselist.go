@@ -1,5 +1,7 @@
 package ReverseList
 
+// 反转链表 https://leetcode.cn/problems/intersection-of-two-linked-lists/
+
 type ListNode struct {
 	Val  int
 	Next *ListNode

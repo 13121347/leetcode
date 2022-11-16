@@ -5,7 +5,8 @@ import (
 	"strings"
 )
 
-// https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/
+// 把数组排成最小的数 https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/
+// 非负整数数组拼接
 // 自定义大小+快排
 func minNumber(nums []int) (result string) {
 	quickSort(nums, 0, len(nums)-1)
